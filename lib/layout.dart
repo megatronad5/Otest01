@@ -6,12 +6,16 @@ import 'package:administration_ivgaz/widgets/tov_nav.dart';
 import 'package:flutter/material.dart';
 
 class SiteLayout extends StatelessWidget {
-  final GlobalKey<ScaffoldState> scaffoldkey = GlobalKey();
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
+
+  SiteLayout({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: topNavigationBar(context, scaffoldkey),
+      key: scaffoldKey,
+      appBar: topNavigationBar(context, scaffoldKey),
+      drawer: const Drawer(),
       body: const ResponsiveWidget(
         largeScreen: LargeScreen(),
         smallScreen: SmallScreen(),
